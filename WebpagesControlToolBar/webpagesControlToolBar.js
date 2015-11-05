@@ -9,14 +9,6 @@
 // @grant        none
 // ==/UserScript==
 
-// Set anchor for bottom
-if (window.top.document.getElementById('endHere') == null)
-{
-    var endOfPage=window.top.document.createElement('a');
-    endOfPage.setAttribute("id","endHere");
-    window.top.document.body.appendChild(endOfPage);
-}
-
 if (window.top.document.getElementById('idTop') == null)
 {
     var ttop = window.top.document.createElement('div');
@@ -65,8 +57,8 @@ if (window.top.document.getElementById('idTop') == null)
     nodetop.setAttribute("src","http://www.msqq.com/d/file/icon/2014-04-01/1723042234dc9d9d1165c50df7dd87ae.png");
     nodetop.setAttribute("style","height:36px;width:36px;");
     atop.appendChild(nodetop);
-    atop.setAttribute("target","_self");
-    atop.setAttribute("href","#");
+    atop.setAttribute("onmouseover","style.cursor='pointer'");
+    atop.setAttribute("onclick","window.top.scroll(0,0)");
     dtop.appendChild(atop);
     ontop.appendChild(dtop);
 
@@ -77,8 +69,8 @@ if (window.top.document.getElementById('idTop') == null)
     nodebottom.setAttribute("src","http://www.msqq.com/d/file/icon/2014-04-01/0c8eaeb956f9c9b5b7d031b88c471124.png");
     nodebottom.setAttribute("style","height:36px;width:36px;");
     abottom.appendChild(nodebottom);
-    abottom.setAttribute("target","_self");
-    abottom.setAttribute("href","#endHere");
+    abottom.setAttribute("onmouseover","style.cursor='pointer'");
+    abottom.setAttribute("onclick","window.top.scrollTo(0,document.body.scrollHeight)");
     dbottom.appendChild(abottom);
     ontop.appendChild(dbottom);
 
